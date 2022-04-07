@@ -72,7 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       getMessage: () => {
-        const store = getStore();
+        const store = getStore()
         const opts = {
           headers: {
             "Authorization" : "Bearer " + store.token

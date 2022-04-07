@@ -11,6 +11,9 @@ export const Navbar = () => {
           <span className="navbar-brand mb-0 h1">React Boilerplate</span>
         </Link>
         <div className="ml-auto">
+          <Link to="/register">
+            <button className="btn btn-success">Register Here</button>
+          </Link>
           {!store.token ? (
             <Link to="/login">
               <button className="btn btn-primary">Login Here!</button>
