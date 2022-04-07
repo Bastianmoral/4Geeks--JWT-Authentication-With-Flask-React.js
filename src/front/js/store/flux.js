@@ -62,7 +62,22 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      logout: () => {
+        const token = sessionStorage.removeItem("token");
+        console.log(
+          "Loginout"
+        );
+          setStore({ token: null });
+
+      },
+
       getMessage: () => {
+        const store = getStore();
+        const opts = {
+          headers: {
+            "Authorization" : "Bearer " + store.token
+          }
+        }
         // fetching data from the backend
         fetch(process.env.BACKEND_URL + "/api/hello")
           .then((resp) => resp.json())
